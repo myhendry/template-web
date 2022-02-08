@@ -1,12 +1,15 @@
 import type { NextPage } from "next";
+import { useTheme } from "next-themes";
+import { useState } from "react";
 
 const Home: NextPage = () => {
+  const { theme, setTheme } = useTheme();
+  const [active, setActive] = useState(true);
+
   return (
-    <div data-theme="light">
-      <div
-        className="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box"
-        data-theme="light"
-      >
+    <div className="container mx-auto">
+      {/* Header */}
+      <div className="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box">
         <div className="flex-none">
           <button className="btn btn-square btn-ghost">
             <svg
@@ -45,11 +48,31 @@ const Home: NextPage = () => {
           </button>
         </div>
       </div>
-
-      <div data-theme="light">
+      {/* Text */}
+      <div>
         <h1 className="text-3xl font-bold underline">Hello world!</h1>
       </div>
 
+      {/* Theme Changer */}
+      <div>
+        <div className="btn-group">
+          <span className="mr-2">The current theme is: {theme}</span>
+          <button
+            onClick={() => setTheme("light")}
+            className={`btn btn-outline btn-xs btn-active`}
+          >
+            Light
+          </button>
+          <button
+            onClick={() => setTheme("dark")}
+            className={`btn btn-outline btn-xs btn-active`}
+          >
+            Dark
+          </button>
+        </div>
+      </div>
+
+      {/* Footer */}
       <footer className="p-10 footer bg-base-200 text-base-content">
         <div>
           <svg
