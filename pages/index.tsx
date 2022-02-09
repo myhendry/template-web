@@ -1,5 +1,6 @@
 import type { GetStaticProps, NextPage } from "next";
 import { createClient } from "contentful";
+import { NextSeo } from "next-seo";
 
 import { NavBar, Footer, ThemeChanger, Hero, Typo } from "../components/common";
 import { IListing } from "../types/app";
@@ -14,14 +15,18 @@ interface IProps {
 
 const Home: NextPage<IProps> = ({ listings }) => {
   return (
-    <div className="container mx-auto space-y-5">
+    <main className="container mx-auto space-y-5">
+      <NextSeo
+        title="Corporate Space HQ"
+        description="More information on corporate space HQ."
+      />
       <NavBar title="C O R P O R A T E  S P A C E" />
       <ThemeChanger />
       <Hero />
       <Typo />
       <Listings listings={listings} />
       <Footer />
-    </div>
+    </main>
   );
 };
 

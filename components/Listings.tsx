@@ -1,4 +1,5 @@
 import Image from "next/image";
+
 import { IListing } from "../types/app";
 
 interface IProps {
