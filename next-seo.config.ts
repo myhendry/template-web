@@ -15,12 +15,4 @@ export const DefaultSeoValues = {
     handle: "@lim",
     cardType: "summary_large_image",
   },
-  seo: {
-    additionalMetaTags: [
-      {
-        name: "google-site-verification",
-        content: process.env.GOOGLE_SITE_VERIFICATION_ID,
-      },
-    ],
-  },
 };
