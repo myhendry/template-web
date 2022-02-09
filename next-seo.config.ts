@@ -1,3 +1,5 @@
+// https://github.com/garmeeh/next-seo
+
 export const DefaultSeoValues = {
   title: "Corporate Space HQ",
   description: "More information on corporate space HQ.",
@@ -9,7 +11,13 @@ export const DefaultSeoValues = {
     site_name: "NextSeo",
   },
   twitter: {
-    handle: "@garmeeh",
+    handle: "@lim",
     cardType: "summary_large_image",
   },
+  additionalMetaTags: [
+    {
+      name: "google-site-verification",
+      content: process.env.GOOGLE_SITE_VERIFICATION_ID,
+    },
+  ],
 };
