@@ -1,4 +1,5 @@
 // https://github.com/garmeeh/next-seo
+// https://github.com/garmeeh/next-seo/issues/726
 
 export const DefaultSeoValues = {
   title: "Corporate Space HQ",
@@ -14,10 +15,12 @@ export const DefaultSeoValues = {
     handle: "@lim",
     cardType: "summary_large_image",
   },
-  additionalMetaTags: [
-    {
-      name: "google-site-verification",
-      content: process.env.GOOGLE_SITE_VERIFICATION_ID,
-    },
-  ],
+  seo: {
+    additionalMetaTags: [
+      {
+        name: "google-site-verification",
+        content: process.env.GOOGLE_SITE_VERIFICATION_ID,
+      },
+    ],
+  },
 };
