@@ -16,10 +16,9 @@ interface IProps {
 const Home: NextPage<IProps> = ({ listings }) => {
   return (
     <main className="container mx-auto space-y-5">
-      <NextSeo
-        title="Corporate Space HQ"
-        description="More information on corporate space HQ."
-      />
+      {/* <NextSeo
+
+      /> */}
       <NavBar title="C O R P O R A T E  S P A C E" />
       <ThemeChanger />
       <Hero />
