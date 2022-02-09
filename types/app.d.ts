@@ -3,7 +3,15 @@ export interface IListing {
     id: string;
   };
   fields: {
-    images: any[];
+    images: IImage[];
     property: string;
+  };
+}
+
+export interface IImage {
+  fields: {
+    file: {
+      url: string;
+    };
   };
 }

@@ -15,7 +15,7 @@ interface IProps {
 const Home: NextPage<IProps> = ({ listings }) => {
   return (
     <div className="container mx-auto space-y-5">
-      <NavBar title="C O O L C O O L" />
+      <NavBar title="C O R P O R A T E  S P A C E" />
       <ThemeChanger />
       <Hero />
       <Typo />
@@ -37,6 +37,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       listings: res.items,
     },
+    revalidate: 1,
   };
 };
 
