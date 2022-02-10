@@ -10,12 +10,13 @@ const Listings = ({ listings }: IProps) => {
   return (
     <div>
       {listings.map((l) => {
+        console.log(l.fields.images[0].fields.file.url);
         return (
           <div className="card lg:card-side" key={l.sys.id}>
             <figure>
               <Image
                 //src={`https://${l.fields.images[0].fields.file.url}`}
-                src={"https://" + l.fields.images[0].fields.file.url}
+                src={"https:" + l.fields.images[0].fields.file.url}
                 alt="img"
                 height={250}
                 width={250}
