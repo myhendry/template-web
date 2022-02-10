@@ -15,7 +15,7 @@ interface IProps {
 
 const Home: NextPage<IProps> = ({ listings }) => {
   return (
-    <main className="container mx-auto space-y-5">
+    <div>
       {/* <NextSeo
 
       /> */}
@@ -25,7 +25,7 @@ const Home: NextPage<IProps> = ({ listings }) => {
       <Typo />
       <Listings listings={listings} />
       <Footer />
-    </main>
+    </div>
   );
 };
 

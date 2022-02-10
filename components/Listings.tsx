@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { IListing } from "../types/app";
 
@@ -10,12 +11,10 @@ const Listings = ({ listings }: IProps) => {
   return (
     <div>
       {listings.map((l) => {
-        console.log(l.fields.images[0].fields.file.url);
         return (
           <div className="card lg:card-side" key={l.sys.id}>
             <figure>
               <Image
-                //src={`https://${l.fields.images[0].fields.file.url}`}
                 src={"https:" + l.fields.images[0].fields.file.url}
                 alt="img"
                 height={250}
@@ -31,7 +30,9 @@ const Listings = ({ listings }: IProps) => {
               </p>
               <div className="card-actions">
                 <button className="btn btn-primary">Get Started</button>
-                <button className="btn btn-ghost">More info</button>
+                <Link href={`/listings/${l.fields.slug}`}>
+                  <a className="btn btn-ghost">More Info</a>
+                </Link>
               </div>
             </div>
           </div>

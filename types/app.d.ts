@@ -5,6 +5,7 @@ export interface IListing {
   fields: {
     images: IImage[];
     property: string;
+    slug: string;
   };
 }
 
