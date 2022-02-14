@@ -65,25 +65,27 @@ const ListingDetails: NextPage<IProps> = ({ listing }) => {
       <article className="prose lg:prose-xl">
         <div onClick={back}>Back</div>
 
-        <h1 className="text-center">{listing?.fields.property}</h1>
+        <div>
+          <h1 className="text-center">{listing?.fields.property}</h1>
 
-        <div className="flex flex-col w-full">
-          <div className="divider"></div>
-        </div>
+          <div className="flex flex-col w-full">
+            <div className="divider"></div>
+          </div>
 
-        <div className="grid grid-col-3">
-          {listing?.fields?.images.map((img, i) => {
-            return (
-              <div key={img.sys.id}>
-                <Image
-                  src={`http:${img.fields.file.url}`}
-                  alt="img"
-                  height={500}
-                  width={500}
-                />
-              </div>
-            );
-          })}
+          <div className="grid grid-cols-3 gap-5">
+            {listing?.fields?.images.map((img, i) => {
+              return (
+                <div key={img.sys.id}>
+                  <Image
+                    src={`http:${img.fields.file.url}`}
+                    alt="img"
+                    height={500}
+                    width={500}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </article>
     </div>
