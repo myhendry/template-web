@@ -62,24 +62,30 @@ const ListingDetails: NextPage<IProps> = ({ listing }) => {
   return (
     <div>
       <NavBar title="C O R P O R A T E  S P A C E" />
-      <div onClick={back}>Back</div>
-      <div className="grid grid-col-3">
-        {listing?.fields?.images.map((img, i) => {
-          return (
-            <div key={img.sys.id}>
-              <Image
-                src={`http:${img.fields.file.url}`}
-                alt="img"
-                height={250}
-                width={250}
-              />
-              <p>Info</p>
-            </div>
-          );
-        })}
-      </div>
-      <p>{listing?.fields.property}</p>
-      <p>{listing?.fields.slug}</p>
+      <article className="prose lg:prose-xl">
+        <div onClick={back}>Back</div>
+
+        <h1 className="text-center">{listing?.fields.property}</h1>
+
+        <div className="flex flex-col w-full">
+          <div className="divider"></div>
+        </div>
+
+        <div className="grid grid-col-3">
+          {listing?.fields?.images.map((img, i) => {
+            return (
+              <div key={img.sys.id}>
+                <Image
+                  src={`http:${img.fields.file.url}`}
+                  alt="img"
+                  height={500}
+                  width={500}
+                />
+              </div>
+            );
+          })}
+        </div>
+      </article>
     </div>
   );
 };

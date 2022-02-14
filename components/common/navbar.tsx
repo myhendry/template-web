@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Link from "next/link";
 
 interface IProps {
   title: string;
@@ -25,7 +26,11 @@ export const NavBar: NextPage<IProps> = ({ title }) => {
         </button>
       </div>
       <div className="flex-1 px-2 mx-2">
-        <span className="text-lg font-bold tracking-widest">{title}</span>
+        <Link href="/">
+          <a>
+            <span className="text-lg font-bold tracking-widest">{title}</span>
+          </a>
+        </Link>
       </div>
       <div className="flex-none">
         <button className="btn btn-square btn-ghost">
