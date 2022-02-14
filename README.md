@@ -1,3 +1,4 @@
+- [ ] Writeup
 - [ ] Styling
 - [ ] Domain
 - [ ] Google or Facebook Marketing

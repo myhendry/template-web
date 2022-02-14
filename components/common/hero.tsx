@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Link from "next/link";
 
 interface IProps {}
 
@@ -12,6 +13,9 @@ export const Hero: NextPage<IProps> = () => {
             Our Team have more than a decade of experience handling Industrial
             and Commercial properties in Singapore. This includes offices, B1
             Light Industrial, B2 Light Industrial Factories, showrooms etc.
+            <Link href="#listing-section">
+              <a className="underline mx-2">View Listings</a>
+            </Link>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
             odio beatae nam aliquid illum accusantium quisquam nulla quis
             accusamus facilis officiis obcaecati vel expedita fugit odit sed

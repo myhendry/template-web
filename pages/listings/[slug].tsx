@@ -63,7 +63,9 @@ const ListingDetails: NextPage<IProps> = ({ listing }) => {
     <div>
       <NavBar title="C O R P O R A T E  S P A C E" />
       <article className="prose lg:prose-xl">
-        <div onClick={back}>Back</div>
+        <div className="cursor-pointer" onClick={back}>
+          Back
+        </div>
 
         <div>
           <h1 className="text-center">{listing?.fields.property}</h1>

@@ -9,7 +9,7 @@ interface IProps {
 
 const Listings = ({ listings }: IProps) => {
   return (
-    <div className="grid grid-cols-3">
+    <div id="listing-section" className="grid grid-cols-3">
       {listings.map((l) => {
         return (
           <div className="card lg:card-side" key={l.sys.id}>
@@ -30,7 +30,7 @@ const Listings = ({ listings }: IProps) => {
                 width={250}
                 className="rounded-xl"
               />
-              <p>
+              <p className="text-justify line-clamp-5">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Deleniti odio beatae nam aliquid illum accusantium quisquam
                 nulla quis accusamus facilis officiis obcaecati vel expedita
