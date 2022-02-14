@@ -9,24 +9,33 @@ interface IProps {
 
 const Listings = ({ listings }: IProps) => {
   return (
-    <div>
+    <div className="grid grid-cols-3">
       {listings.map((l) => {
         return (
           <div className="card lg:card-side" key={l.sys.id}>
-            <figure>
+            {/* <figure>
               <Image
                 src={"https:" + l.fields.images[0].fields.file.url}
                 alt="img"
                 height={250}
                 width={250}
               />
-            </figure>
+            </figure> */}
             <div className="card-body">
               <h2 className="card-title">{l.fields.property}</h2>
+              <Image
+                src={"https:" + l.fields.images[0].fields.file.url}
+                alt="img"
+                height={250}
+                width={250}
+                className="rounded-xl"
+              />
               <p>
-                Rerum reiciendis beatae tenetur excepturi aut pariatur est eos.
-                Sit sit necessitatibus veritatis sed molestiae voluptates
-                incidunt iure sapiente.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti odio beatae nam aliquid illum accusantium quisquam
+                nulla quis accusamus facilis officiis obcaecati vel expedita
+                fugit odit sed tenetur atque modi, distinctio quia ex suscipit
+                ipsum qui.
               </p>
               <div className="card-actions">
                 <button className="btn btn-primary">Get Started</button>

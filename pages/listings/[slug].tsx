@@ -1,8 +1,9 @@
 import { createClient } from "contentful";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
-import { NavBar } from "../../components/common";
+import Image from "next/image";
 
+import { NavBar } from "../../components/common";
 import { IListing } from "../../types/app";
 
 interface IProps {
@@ -57,11 +58,27 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
 const ListingDetails: NextPage<IProps> = ({ listing }) => {
   const { back } = useRouter();
+
+  const listingImgs = listing.fields.images;
   return (
     <div>
       <NavBar title="C O R P O R A T E  S P A C E" />
       <div onClick={back}>Back</div>
-      <p>Listing Detail</p>
+      <div className="grid grid-col-3">
+        {listingImgs?.map((img, i) => {
+          return (
+            <div key={img.sys.id}>
+              <Image
+                src={`http:${img.fields.file.url}`}
+                alt="img"
+                height={250}
+                width={250}
+              />
+            </div>
+          );
+        })}
+      </div>
+
       <p>{listing?.fields.property}</p>
       <p>{listing?.fields.slug}</p>
     </div>

@@ -15,4 +15,7 @@ export interface IImage {
       url: string;
     };
   };
+  sys: {
+    id: string;
+  };
 }
