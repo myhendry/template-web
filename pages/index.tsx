@@ -15,17 +15,19 @@ interface IProps {
 
 const Home: NextPage<IProps> = ({ listings }) => {
   return (
-    <div>
+    <>
       {/* <NextSeo
 
       /> */}
       <NavBar title="C O R P O R A T E  S P A C E" />
-      <ThemeChanger />
-      <Hero />
-      <Typo />
-      <Listings listings={listings} />
-      <Footer />
-    </div>
+      <div className="flex flex-col items-center">
+        <ThemeChanger />
+        <Hero />
+        <Typo />
+        <Listings listings={listings} />
+        <Footer />
+      </div>
+    </>
   );
 };
 

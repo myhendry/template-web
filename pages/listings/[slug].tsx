@@ -3,7 +3,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
-import { NavBar } from "../../components/common";
+import { Footer, NavBar } from "../../components/common";
 import { IListing } from "../../types/app";
 
 interface IProps {
@@ -62,34 +62,37 @@ const ListingDetails: NextPage<IProps> = ({ listing }) => {
   return (
     <div>
       <NavBar title="C O R P O R A T E  S P A C E" />
-      <article className="prose lg:prose-xl">
-        <div className="cursor-pointer" onClick={back}>
-          Back
-        </div>
-
-        <div>
-          <h1 className="text-center">{listing?.fields.property}</h1>
-
-          <div className="flex flex-col w-full">
-            <div className="divider"></div>
+      <div className="flex flex-col items-center">
+        <article className="prose lg:prose-xl">
+          <div className="cursor-pointer" onClick={back}>
+            Back
           </div>
 
-          <div className="grid grid-cols-3 gap-5">
-            {listing?.fields?.images.map((img, i) => {
-              return (
-                <div key={img.sys.id}>
-                  <Image
-                    src={`http:${img.fields.file.url}`}
-                    alt="img"
-                    height={500}
-                    width={500}
-                  />
-                </div>
-              );
-            })}
+          <div>
+            <h1 className="text-center">{listing?.fields.property}</h1>
+
+            <div className="flex flex-col w-full">
+              <div className="divider"></div>
+            </div>
+
+            <div className="grid grid-cols-3 gap-5">
+              {listing?.fields?.images.map((img, i) => {
+                return (
+                  <div key={img.sys.id}>
+                    <Image
+                      src={`http:${img.fields.file.url}`}
+                      alt="img"
+                      height={500}
+                      width={500}
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      </article>
+        </article>
+      </div>
+      <Footer />
     </div>
   );
 };
